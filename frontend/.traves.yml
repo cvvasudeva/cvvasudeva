@@ -1,0 +1,9 @@
+sudo: reguired
+services:
+  - docker
+
+before_install:
+  - docker build -t cvvasudeva/docker-react -f Dockerfile.dev .
+  
+script:
+  -docker run cvvasudeva/docker-react npm run test -- --coverage 
